@@ -1,0 +1,67 @@
+GET http://localhost:5000/college/admin
+
+###
+
+GET http://localhost:5000/college/admin/6086402a61dd6916dc75e832
+
+###
+POST http://localhost:5000/college/admin
+Content-Type: application/json
+
+{
+    "name":"Shivesh",
+    "adminId":"stss",
+    "password":"pass",
+    "hasPermission":"true"
+}
+
+###
+POST http://localhost:5000/college/admin/login
+Content-Type: application/json
+
+{
+    "adminId":"stss",
+    "password":"pass"
+}
+
+
+###
+DELETE http://localhost:5000/college/admin/6086402a61dd6916dc75e832
+
+###
+PATCH http://localhost:5000/college/admin/6085658878fee14730d89ecf
+Content-Type: application/json
+
+{
+    "name": "Shivesh Tiwari"
+}
+
+
+###
+GET http://localhost:5000/college/document
+
+###
+GET http://localhost:5000/college/document/get
+
+###
+GET  http://localhost:5000/college/document/6087a05f583068122c8ff39d
+
+###
+POST http://localhost:5000/college/document
+
+###
+POST http://localhost:5000/college/document/search
+Content-Type: application/json
+
+{
+    "tags": [
+      "Shree",
+      "Bhagwat"
+    ]
+}
+
+###
+PATCH  http://localhost:5000/college/document/6087a05f583068122c8ff39d
+
+###
+DELETE http://localhost:5000/college/document/6087a05f583068122c8ff39d
