@@ -15,21 +15,21 @@ You can download it from here
 - Clone this repo on your system 
 - Open `Command Prompt` or `Terminal` inside the cloned folder
 - Now, Just run the following commands
-```node
+```sh
 cd ./client-side
 npm install
 cd ../server
 npm install
 ```
 - Once you've installed all the dependencies, reopen `terminal` in root folder and run following commands
-```node
+```sh
 cd ./client-side
 npm start
 ```
 > this will boot up the react on [localhost:3000](http://localhost:3000), then go to  [localhost:3000/college](http://localhost:3000/college) to run the app
 
 - Now open another `terminal` in the root folder and run following commands
-```node
+```
 cd ./server
 npm server.js
 ```
