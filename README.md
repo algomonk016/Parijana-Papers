@@ -1,5 +1,5 @@
-![army](https://user-images.githubusercontent.com/55861951/116590241-242c9c00-a93b-11eb-8366-d1078dcffcce.png) 
-# Welcome to Parijana-Papers 👋
+
+# ![army](https://user-images.githubusercontent.com/55861951/116590241-242c9c00-a93b-11eb-8366-d1078dcffcce.png)  Welcome to Parijana-Papers 👋
 
 > Parijana-Papers is a website that contains previous year papers of `UIET, Kanpur`
 
