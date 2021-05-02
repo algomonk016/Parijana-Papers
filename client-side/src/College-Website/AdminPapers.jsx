@@ -17,7 +17,6 @@ const AdminPapers = async => {
         }
         getAllPapers()
         document.title = 'Question Papers'
-        // console.log(papers)
     }, [])
     
     useEffect(()=>{
@@ -46,7 +45,7 @@ const AdminPapers = async => {
     if(papers!=null) {
         papersList = papers.map(obj => {
             return(
-                <Documents id={obj._id} subCode = {obj.subCode} tags = {obj.tags} dateAdded = {obj.dateAdded} url = {obj.filePath} uploadedBy = {obj.uploadedBy} />
+                <Documents id={obj._id} subCode = {obj.subCode} tags = {obj.tags.length} dateAdded = {obj.dateAdded} url = {obj.filePath} uploadedBy = {obj.uploadedBy} />
             )
         })
     }
@@ -54,7 +53,6 @@ const AdminPapers = async => {
         <div>
             <div className="flex justify-center px-5">
                 <input type="text" onChange={e => setInpData(e.target.value)} className={inpStyle} placeholder="Search here"/>
-                {/* <button className="w-1/6 border ml-5 shadow-md hover:bg-purple-400 hover:text-purple-800 hover:shadow:lg rounded-md bg-purple-300 text-purple-700">Search</button> */}
             </div>
 
             <Heading style="text-center shadow-md w-4/5 mx-auto bg-gray-200 pt-1 text-3xl" title={'papers '} />

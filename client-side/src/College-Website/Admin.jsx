@@ -17,18 +17,15 @@ function Admin() {
         }
         document.title = 'Add Documents'
     }, [])
+
     const handleSubmit = async (e) => {
         e.preventDefault() 
-        console.log(data)
         let formData = new FormData()
         formData.append('file', file)
-        // console.log(file)
 
         try {
             const res = await axios.post(url, formData)
             const {subCode, filePath, isSuccessfull, fileName} = res.data
-            console.log('file uploaded')
-            console.log(res.data)
             
             const newNode = {
                 subCode: data.subCode,
@@ -48,8 +45,26 @@ function Admin() {
             else alert('Operation failed')
 
         } catch(err) {
-            console.log(err)
+            // console.log(err)
         }
+    }
+
+    const handlleTags = e => {
+        // console.log(e.target.value)
+        let string = e.target.value
+        string = string.toLowerCase()
+        let temp = []
+        let tag = ''
+        for(let ch of string) {
+            if(ch==',') {
+                tag = ''
+                continue
+            }
+            tag += ch
+            tag.trim()
+            if(!temp.includes(tag) && tag!='') temp.push(tag)
+        }
+        setData({...data, tags:temp})
     }
 
     const handleFileSelect = e => {
@@ -85,7 +100,7 @@ function Admin() {
                     <textarea 
                         className={inpStyle} 
                         placeholder="Enter in the order you've selected files, Sub Code, Year and Teacher name"
-                        onChange = {e => setData({...data, tags: (e.target.value.toLowerCase()).split(',')})}
+                        onChange = {handlleTags}
                     />
                 </div>
 

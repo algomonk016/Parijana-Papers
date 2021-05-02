@@ -4,11 +4,9 @@ import InputLabel from './Components/InputLabel'
 import Heading from './Components/Heading'
 
 function EditDocuments() {
-    
     const url = new URL(window.location.href)
     const id = url.searchParams.get('id')
 
-    const [file, setFile] = useState('')
     const [data, setData] = useState({
         subCode: '',
         tags: []
@@ -17,7 +15,6 @@ function EditDocuments() {
     const getData = async () => {
         const axiosUrl = '/college/document/' + id
         const res = await axios.get(axiosUrl)
-        // console.log(res.data)
         setData({...data, subCode: res.data.subCode, tags: res.data.tags})
     }
     
@@ -49,7 +46,23 @@ function EditDocuments() {
             alert('Failed')
         }
     }
-    
+
+    const handleTag = e => {
+        let string = e.target.value
+        string = string.toLowerCase()
+        let temp = []
+        let tag = ''
+        for(let ch of string) {
+            if(ch==',') {
+                tag = ''
+                continue
+            }
+            tag += ch
+            tag.trim()
+            if(!temp.includes(tag) && tag!='') temp.push(tag)
+        }
+        setData({...data, tags:temp})
+    }
 
     let inpStyle = "w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out";
     return (
@@ -60,7 +73,6 @@ function EditDocuments() {
                     <InputLabel label="Enter Subject Code"/>
                     <input 
                         type="text" 
-                        placeholder="Notes of MTHS-101, ISCS-101 2k19" 
                         className={inpStyle}
                         value = {data.subCode}
                         onChange = {e => setData({...data, subCode: e.target.value})}
@@ -70,9 +82,8 @@ function EditDocuments() {
                     <InputLabel label="Please provide files details too"/>
                     <textarea 
                         className={inpStyle} 
-                        placeholder="Enter in the order you've selected files, Sub Code, Year and Teacher name"
                         value = {data.tags}
-                        onChange = {e => setData({...data, tags: e.target.value.split(',')})}
+                        onChange = {handleTag}
                     />
                 </div>
 
@@ -81,7 +92,7 @@ function EditDocuments() {
                         type="submit" 
                         className="bg-green-300 text-green-700 hover:bg-green-400 hover:text-green-800 py-3 rounded-md"
                         >
-                            Send Files
+                            Edit Files
                         </button>
                     <button type="reset" className="bg-red-300 text-red-700 hover:bg-red-400 hover:text-red-800 py-3 rounded-md" >Reset</button>
                 </div>
