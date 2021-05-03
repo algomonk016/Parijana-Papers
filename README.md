@@ -1,14 +1,18 @@
-
-# ![army (1)](https://user-images.githubusercontent.com/55861951/116801406-51d63880-ab27-11eb-92c8-e79e1605a236.png) Welcome to Parijana-Papers 👋
+<p align="center">
+<img src="https://user-images.githubusercontent.com/55861951/116801406-51d63880-ab27-11eb-92c8-e79e1605a236.png" alt="Parijana Logo" >
+</p>
+<h1 align="center">Welcome to Parijana-Papers 👋 </h1>
 
 > Parijana-Papers is a website that contains previous year papers of `UIET, Kanpur`
 
 ## ✨ Prerequisite
-`Node JS` and `MongoDB Compass` should be installed on your system.
+`Node JS` should be installed on your system.
+For server, `MongoDB Compass` should be installed on youy system or you can use `MongoDB Atlas`
 
-You can download it from here
+You can get them from here
 - [Node JS](https://nodejs.org/en/)
 - [MongoDB Compass](https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.5-signed.msi)
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
 
 
 ## 🚀 Usage
@@ -27,6 +31,8 @@ cd ./client-side
 npm start
 ```
 > this will boot up the react on [localhost:3000](http://localhost:3000), then go to  [localhost:3000/college](http://localhost:3000/college) to run the app
+
+- Create a `.env` file and enter `DATABASE_URL=mongodb://localhost/college-website` or
 
 - Now open another `terminal` in the root folder and run following commands
 ```
