@@ -3,7 +3,7 @@ import axios from 'axios'
 import PDF from './PDF'
 import Heading from './Heading'
 import {Animated} from "react-animated-css";
-import searching from '../Assests/Pics/searching.PNG'
+import searching from '../Assests/Pics/search.PNG'
 
 function SearchFiles() {
     let inpStyle = "w-10/12 bg-white rounded border shadow-md rounded-md border-purple-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out";

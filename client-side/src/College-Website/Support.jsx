@@ -7,7 +7,7 @@ function Support() {
         document.title = 'Support Us'
     },[])
     return (
-        <div className="container grid grid-cols-2 gap-5 flex flex-wrap rounded-lg mx-auto justify-around text-gray-600 body-font relative py-5">
+        <div className="container md:grid md:grid-cols-2 gap-5 rounded-lg mx-auto justify-around text-gray-600 body-font relative py-5">
             <SupportHero />
             <SupportForm />
         </div>

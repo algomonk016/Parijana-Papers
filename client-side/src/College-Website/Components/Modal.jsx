@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Modal from 'react-modal';
 import Heading from './Heading';
-import tips from '../Assests/Pics/search.PNG'
+import tips from '../Assests/Pics/searchingISC.gif'
 import ModalMessage from './ModalMessage';
 import {Animated} from "react-animated-css";
 
@@ -72,10 +72,10 @@ const MyModal =()=> {
                             <p className="text-lg m-2 font-serif">For more accurate search results</p>
                         </Animated>
                         <Animated animationIn="fadeInDown" animationOut="slideOutUp" animationInDuration={700} animationInDelay={300} isVisible={true}>
-                            <ModalMessage msg="Use Subject codes, ex: MTHS-101, MTHS101, MTH-S-101" />
+                            <ModalMessage msg="Use Subject codes, ex: MTHS-101 or MTH-S-101" />
                         </Animated>
                         <Animated animationIn="fadeInDown" animationOut="slideOutUp" animationInDuration={700} animationInDelay={350} isVisible={true}>
-                            <ModalMessage msg="Use Semester numbers, ex: SEM1 or SEM-1" />
+                            <ModalMessage msg="Use Semester numbers, ex: SEM-1" />
                         </Animated>
                         <Animated animationIn="fadeInDown" animationOut="slideOutUp" animationInDuration={700} animationInDelay={400} isVisible={true}>
                             <ModalMessage msg="You can use teacher names also, just spell it correctly" />
