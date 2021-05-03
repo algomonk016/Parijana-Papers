@@ -32,7 +32,7 @@ npm start
 ```
 > this will boot up the react on [localhost:3000](http://localhost:3000), then go to  [localhost:3000/college](http://localhost:3000/college) to run the app
 
-- Create a `.env` file and enter `DATABASE_URL=mongodb://localhost/college-website` or
+- Create a `.env` file and enter `DATABASE_URL=mongodb://localhost/college-website` or your atlas connection link
 
 - Now open another `terminal` in the root folder and run following commands
 ```
