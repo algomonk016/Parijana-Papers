@@ -12,10 +12,16 @@ function EditDocuments() {
         tags: []
     })
     
+    const [prevData, setPrevData] = useState({
+        subCode: '',
+        tags: ''
+    })
+
     const getData = async () => {
         const axiosUrl = '/college/document/' + id
         const res = await axios.get(axiosUrl)
-        setData({...data, subCode: res.data.subCode, tags: res.data.tags})
+        setPrevData({subCode: res.data.subCode, tags: res.data.tags.toString()})
+        setData({subCode: res.data.subCode, tags: res.data.tags.toString()})
     }
     
     useEffect(()=> {
@@ -74,7 +80,7 @@ function EditDocuments() {
                     <input 
                         type="text" 
                         className={inpStyle}
-                        value = {data.subCode}
+                        defaultValue = {prevData.subCode}
                         onChange = {e => setData({...data, subCode: e.target.value})}
                     />
                 </div>
@@ -82,9 +88,10 @@ function EditDocuments() {
                     <InputLabel label="Please provide files details too"/>
                     <textarea 
                         className={inpStyle} 
-                        value = {data.tags}
                         onChange = {handleTag}
-                    />
+                        defaultValue = {prevData.tags}
+                    >
+                    </textarea>
                 </div>
 
                 <div className="mt-3 grid grid-cols-2 gap-10">
