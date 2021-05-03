@@ -3,7 +3,7 @@ import axios from 'axios'
 import PDF from './PDF'
 import Heading from './Heading'
 import {Animated} from "react-animated-css";
-import searching from '../Assests/Pics/searching.gif'
+import searching from '../Assests/Pics/searching.PNG'
 
 function SearchFiles() {
     let inpStyle = "w-10/12 bg-white rounded border shadow-md rounded-md border-purple-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out";
@@ -36,10 +36,9 @@ function SearchFiles() {
         })
     } else {
         papersList = 
-            <Animated animationIn="fadeInUp" animationOut="slideOutUp" animationInDuration={800} isVisible={true}>
+            <Animated animationIn="fadeIn" animationInDuration={700} isVisible={true}>
                 <div className="flex">
-                    <img src={searching} className="w-64 mr-16"/>
-                    <span className="relative text-3xl text-indigo-700 font-serif mt-16 ml-40" style={{fontFamily: 'Shippori Mincho'}}> No result for this search ... </span>
+                    <img src={searching} className="w-64 flex-shrink"/>
                 </div>
             </Animated>
     }
@@ -53,17 +52,16 @@ function SearchFiles() {
                 </div>
             </Animated>
             
-
             {
                 inpData.length<=0?<></>:
-                    <>
+                    <div className="pdfContainer mt-5">
                         <Animated animationIn="fadeIn" animationOut="slideOutUp" animationInDuration={800} isVisible={true}>
                             <Heading title="Search Results" />
                             <div className="shadow-md p-3 bg-blue-100 flex flex-row flex-wrap relative">
                                 {papersList}
                             </div>
                         </Animated>
-                    </>
+                    </div>
             }
             
         </div>

@@ -14,6 +14,10 @@
   background: #b0b0b0;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 
 .shaking {
   animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both infinite;
@@ -21,6 +25,7 @@
   backface-visibility: hidden;
   perspective: 1000px;
 }
+
 @keyframes shake {
   10%,
   90% {
@@ -38,5 +43,22 @@
   40%,
   60% {
     transform: translate3d(0px, 1.5px, 0);
+  }
+}
+
+/* pdf */
+@media (max-width: 640px) { 
+  .pdfDetails {
+    width:130px !important;
+    margin: 0 10px !important;
+  }
+
+  .pdfContainer {
+    margin: 0 5px !important;
+    padding: 10px 0 !important;
+  }
+
+  .heading {
+    margin: 0 10px !important;
   }
 }

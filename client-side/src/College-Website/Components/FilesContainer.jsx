@@ -41,18 +41,18 @@ function FilesContainer() {
     }
 
     return (
-        <div className="flex justify-center ">
+        <div className="flex justify-center">
             <div className="container w-screen py-4">
                 <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
                     <Heading title='recently uploaded' />
-                    <div className="bg-gray-200 flex rounded flex-row overflow-x-scroll">
+                    <div className="bg-gray-200 flex rounded flex-row overflow-x-scroll pdfContainer">
                         {recUploaded}
                     </div>
                 </Animated>
                 <br/><br/>
                 <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={200} isVisible={true}>
                     <Heading title='Most Viewed' />
-                    <div className="bg-blue-100 flex flex-around flex-row overflow-x-scroll">
+                    <div className="bg-blue-100 flex flex-around flex-row overflow-x-scroll pdfContainer">
                         {mostViewd}
                     </div>
                 </Animated>
