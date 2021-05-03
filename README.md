@@ -1,7 +1,8 @@
+#  
 <p align="center">
 <img src="https://user-images.githubusercontent.com/55861951/116801406-51d63880-ab27-11eb-92c8-e79e1605a236.png" alt="Parijana Logo" >
 </p>
-<h1 align="center">Welcome to Parijana-Papers 👋 </h1>
+<h1 align="center">Welcome to <a href="https://parijana.herokuapp.com/college" >Parijana-Papers</a> 👋 </h1>
 
 > Parijana-Papers is a website that contains previous year papers of `UIET, Kanpur`
 
