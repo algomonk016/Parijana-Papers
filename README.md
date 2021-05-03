@@ -6,7 +6,17 @@
 
 > Parijana-Papers is a website that contains previous year papers of `UIET, Kanpur`
 
-## ✨ Prerequisite
+## Overview 👀
+- Easy searching of question papers by various tag names
+  - *Subject Code*
+  - *Subject Name*
+  - *Semester number*
+  - *Teacher name*
+  - *Year of examination*
+- Clean UI
+- Responsive Design
+
+## 💻 Prerequisite for Running Locally
 `Node JS` should be installed on your system.
 For server, `MongoDB Compass` should be installed on youy system or you can use `MongoDB Atlas`
 
@@ -40,6 +50,10 @@ npm start
 cd ./server
 npm server.js
 ```
+
+## 🛠 WIP
+- Dark mode
+- More interactive CSS
 
 ## 🤝 Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
