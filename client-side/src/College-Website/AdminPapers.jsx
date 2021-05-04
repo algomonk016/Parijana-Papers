@@ -45,7 +45,7 @@ const AdminPapers = async => {
     if(papers!=null) {
         papersList = papers.map(obj => {
             return(
-                <Documents id={obj._id} subCode = {obj.subCode} tags = {obj.tags.length} dateAdded = {obj.dateAdded} url = {obj.filePath} uploadedBy = {obj.uploadedBy} />
+                <Documents id={obj._id} subCode = {obj.subCode} tags = {obj.tags.length} dateAdded = {obj.dateAdded} url = {obj.filePath} uploadedBy = {obj.uploadedBy} views = {obj.views} />
             )
         })
     }
@@ -57,12 +57,13 @@ const AdminPapers = async => {
 
             <Heading style="text-center shadow-md w-4/5 mx-auto bg-gray-200 pt-1 text-3xl" title={'papers '} />
 
-            <table className="w-4/5 mx-auto">
+            <table className="w-4/5 mx-auto mb-10">
                 <thead>
                     <td className="px-5"> <Heading title='PDF'/> </td>
                     <td className="px-5"> <Heading title='tags'/> </td>
                     <td className="px-5"> <Heading title='uploaded by'/> </td>
                     <td className="px-5"> <Heading title='date Added'/> </td>
+                    <td className="px-5"> <Heading title='Views'/> </td>
                     <td className="text-center"> <Heading title='Actions'/> </td>
                 </thead>
                 <tbody>

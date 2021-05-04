@@ -5,21 +5,26 @@ import tips from '../Assests/Pics/searchingISC.gif'
 import ModalMessage from './ModalMessage';
 import {Animated} from "react-animated-css";
 
+let bgOverlayColor = 'rgba(0,0,0,0.625)'
 const customStyles = {
+    overlay: {
+        backgroundColor: bgOverlayColor,
+    },
     content: {
         top: '50%',
         left: '50%',
         right: 'auto',
         bottom: 'auto',
         marginRight: '-50%',
-        transform: 'translate(-50%, -50%)'
+        transform: 'translate(-50%, -50%)',
+        border:'none',
     }
 };
 
 Modal.setAppElement('#root')
 
 const MyModal =()=> {
-    let closeStyle = "mt-1 mr-1 px-1 w-10 h-10 bg-red-300 text-red-500 hover:bg-red-400 hover:text-red-700 rounded-full absolute right-0 top-0";
+    let closeStyle = "mt-2 mr-2 px-1 w-10 h-10 bg-red-300 text-red-700 hover:bg-red-400 hover:text-red-900 rounded-full absolute right-0 top-0";
     useEffect(()=>{
         if(localStorage.getItem('ModalOpened') != 1) {
             setTimeout(openModal, 3300)
@@ -54,14 +59,14 @@ const MyModal =()=> {
                     style={customStyles}
                     contentLabel="Example Modal"
                 >
-                    <div className="flex bg-gray-700 px-3 shadow-lg">
+                    <div className="flex bg-red-700 px-3 shadow-lg">
                         <Animated animationIn="fadeIn" animationOut="slideOutUp" animationInDuration={700} animationInDelay={200} isVisible={true}>
                             <Heading style="font-serif text-gray-200" title="About Searching"/>
                             <button onClick={closeModal} className={closeStyle}> &#10005; </button>
                         </Animated>
                     </div>
 
-                    <div className="bg-gray-200 text-gray-600 p-3">
+                    <div className="bg-orange-200 text-orange-700 p-4">
                         <Animated animationIn="fadeInDown" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
                             <ModalMessage msg="Search for any previous year paper you want" />
                         </Animated>

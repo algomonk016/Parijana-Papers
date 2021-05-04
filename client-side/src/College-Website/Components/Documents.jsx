@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Documents = (props) => {
     const axiosUrl = '/college/document'
-    const {id, subCode, tags, uploadedBy ,dateAdded ,url} = props
+    const {id, subCode, tags, uploadedBy ,dateAdded ,url, views} = props
     const editUrl = '/college/editDocuments?id='+id.toString();
     // console.log(tags)
     const handleClick = () => {
@@ -31,6 +31,7 @@ const Documents = (props) => {
             <td className="px-3 py-2">{tags.toString()}</td>
             <td className="px-3 py-2">{uploadedBy}</td>
             <td className="px-3 py-2">{dateAdded}</td>
+            <td className="px-3 py-2">{views}</td>
             <td className="grid grid-cols-2 gap-1 mt-1">
                 <Link 
                     to={editUrl}
