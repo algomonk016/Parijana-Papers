@@ -45,7 +45,7 @@ const AdminPapers = async => {
     if(papers!=null) {
         papersList = papers.map(obj => {
             return(
-                <Documents id={obj._id} subCode = {obj.subCode} tags = {obj.tags.length} dateAdded = {obj.dateAdded} url = {obj.filePath} uploadedBy = {obj.uploadedBy} views = {obj.views} />
+                <Documents id={obj._id} subCode = {obj.subCode} tags = {obj.tags.length} dateAdded = {obj.dateAdded} url = {obj.viewLink} driveId = {obj.driveId} uploadedBy = {obj.uploadedBy} views = {obj.views} />
             )
         })
     }

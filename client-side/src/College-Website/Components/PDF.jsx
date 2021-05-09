@@ -6,11 +6,12 @@ import {Animated} from "react-animated-css";
 import '../style.css'
 
 function PDF(props) {
-    let url = 'http://localhost:5000/'+props.url
+    // let downloadLink = props.downloadLink
+    let viewLink = props.viewLink
     const handleOpen = async ()=> {
         let axiosUrl = 'college/document/inc/'+props.id
-        const res = await axios.patch(axiosUrl, {id: props.id})
-        window.location.assign(url)
+        axios.patch(axiosUrl, {id: props.id})
+        window.open(viewLink)
     }
 
     return (

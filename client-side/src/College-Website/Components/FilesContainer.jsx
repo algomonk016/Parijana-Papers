@@ -26,7 +26,7 @@ function FilesContainer() {
     if(recentlyUploaded!=null) {
         recUploaded = recentlyUploaded.map(obj=> {
             return(
-                <PDF id={obj._id} subCode = {obj.subCode} tags = {obj.tags} url = {obj.filePath}/>
+                <PDF id={obj._id} subCode = {obj.subCode} tags = {obj.tags} viewLink = {obj.viewLink} downloadLink = {obj.downloadLink} />
             )
         })
     }

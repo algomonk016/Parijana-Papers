@@ -9,12 +9,20 @@ const documentSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    filePath: {
+    tags: {
+        type: Array,
+        required: true
+    },
+    downloadLink: {
         type: String,
         required: true
     },
-    tags: {
-        type: Array,
+    viewLink: {
+        type: String,
+        required: true
+    },
+    driveId: {
+        type: String,
         required: true
     },
     uploadedBy: {

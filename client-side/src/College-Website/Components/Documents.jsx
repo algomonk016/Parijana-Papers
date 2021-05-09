@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 
 const Documents = (props) => {
     const axiosUrl = '/college/document'
-    const {id, subCode, tags, uploadedBy ,dateAdded ,url, views} = props
+    const {id, subCode, tags, dateAdded, url, driveId, uploadedBy, views } = props 
     const editUrl = '/college/editDocuments?id='+id.toString();
     // console.log(tags)
     const handleClick = () => {
-        window.location.replace(`http://localhost:5000${url}`)
+        window.open(url)
     }
 
     const handleDelete = async() => {
@@ -36,7 +36,7 @@ const Documents = (props) => {
                 <Link 
                     to={editUrl}
                     className="py-1 text-center px-3 bg-orange-300 text-orange-500 rounded-md hover:bg-orange-400 text-orange-700"
-                >Edit</Link>
+                > Edit </Link>
                 <button onClick={handleDelete} className="py-1 px-3 bg-red-300 text-red-500 rounded-md hover:bg-red-400 text-red-700">Delete</button>
             </td>
         </tr>

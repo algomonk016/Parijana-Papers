@@ -25,13 +25,15 @@ function Admin() {
 
         try {
             const res = await axios.post(url, formData)
-            const {subCode, filePath, isSuccessfull, fileName} = res.data
+            const { fileName, downloadLink, viewLink, driveId ,isSuccessfull } = res.data
             
             const newNode = {
                 subCode: data.subCode,
-                tags: data.tags,
-                documentUrl: filePath,
                 fileName: fileName,
+                tags: data.tags,
+                downloadLink: downloadLink,
+                viewLink: viewLink,
+                driveId: driveId,
                 uploadedBy: localStorage.getItem('admin')
             }
             const res2 = await axios.post(url+'/Data', newNode)
@@ -40,7 +42,6 @@ function Admin() {
             if(isSuccessfull === isSuccessfull2 === true) {
                 alert('Operation successfull')
                 document.getElementById('form').reset()
-
             }
             else alert('Operation failed')
 
