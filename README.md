@@ -65,6 +65,8 @@ npm server.js
 
 ## 🛠 WIP
 - Dark mode
+- Uploading multiple files at one shot
+- Sending pdf using mail
 - More interactive CSS
 
 ## 🤝 Contributing
