@@ -17,24 +17,37 @@
 - Responsive Design
 
 ## 💻 Prerequisite for Running Locally
-`Node JS` should be installed on your system.
-For server, `MongoDB Compass` should be installed on youy system or you can use `MongoDB Atlas`
+- `Node JS` should be installed on your system. <br>
+- `MongoDB Compass` should be installed on your system or you can use `MongoDB Atlas`
+- `Google Drive API` credentials
 
 You can get them from here
 - [Node JS](https://nodejs.org/en/)
 - [MongoDB Compass](https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.5-signed.msi)
 - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+- [Drive API Tutorial](https://www.youtube.com/watch?v=1y0-IfRW114&t=819s)
 
 
 ## 🚀 Usage
 - Clone this repo on your system 
-- Open `Command Prompt` or `Terminal` inside the cloned folder
+```sh
+git clone https://github.com/algomonk016/Parijana-Papers.git
+cd Parijana-Papers
+```
 - Now, Just run the following commands
 ```sh
 cd ./client-side
 npm install
 cd ../server
 npm install
+```
+- Create a `.env` file and provide your credentials
+```sh
+DATABASE_URL: <value>
+CLIENT_ID: <value>
+CLIENT_SECRET: <value>
+REDIRECT_URI: <value>
+REFRESH_TOKEN: <value>
 ```
 - Once you've installed all the dependencies, reopen `terminal` in root folder and run following commands
 ```sh
@@ -43,7 +56,6 @@ npm start
 ```
 > this will boot up the react on [localhost:3000](http://localhost:3000), then go to  [localhost:3000/college](http://localhost:3000/college) to run the app
 
-- Create a `.env` file and enter `DATABASE_URL=mongodb://localhost/college-website` or your atlas connection link
 
 - Now open another `terminal` in the root folder and run following commands
 ```
