@@ -41,7 +41,7 @@ npm install
 cd ../server
 npm install
 ```
-- Create a `.env` file and provide your credentials
+- Create a `.env` file inside `server` folder and provide your credentials
 ```sh
 DATABASE_URL: <value>
 CLIENT_ID: <value>
