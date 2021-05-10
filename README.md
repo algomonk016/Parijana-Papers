@@ -6,6 +6,8 @@
 
 > Parijana-Papers is a website that contains previous year papers of `UIET, Kanpur`
 
+![Parijana-Papers](https://user-images.githubusercontent.com/55861951/117621436-3f937480-b18f-11eb-8501-f63198b7513b.png)
+
 ## 👀 Overview 
 - Easy searching of question papers by various tag names
   - *Subject Code*
@@ -34,7 +36,7 @@ You can get them from here
 git clone https://github.com/algomonk016/Parijana-Papers.git
 cd Parijana-Papers
 ```
-- Now, Just run the following commands
+- Now, instll the dependencies by following given commands
 ```sh
 cd ./client-side
 npm install
