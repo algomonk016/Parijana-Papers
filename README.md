@@ -70,6 +70,8 @@ npm server.js
 - Uploading multiple files at one shot
 - Sending pdf using mail
 - More interactive CSS
+- Auto-cleaning the localstorage
+- A super-admin, with super powers
 
 ## 🤝 Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
