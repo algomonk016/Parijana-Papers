@@ -56,7 +56,7 @@ REFRESH_TOKEN: <value>
 cd ./client-side
 npm start
 ```
-> this will boot up the react on [localhost:3000](http://localhost:3000), then go to  [localhost:3000/college](http://localhost:3000/college) to run the app
+> this will boot up the react-app on [localhost:3000](http://localhost:3000), then go to  [localhost:3000/college](http://localhost:3000/college) to run the app
 
 
 - Now open another `terminal` in the root folder and run following commands
@@ -64,6 +64,10 @@ npm start
 cd ./server
 npm server.js
 ```
+> this will boot up the node server on [localhost:5000](http://localhost:5000)
+
+Now you're good to go ...
+
 
 ## 🛠 WIP
 - Dark mode
