@@ -36,7 +36,7 @@ You can get them from here
 git clone https://github.com/algomonk016/Parijana-Papers.git
 cd Parijana-Papers
 ```
-- Now, instll the dependencies by following given commands
+- Now, instll the dependencies using given commands
 ```sh
 cd ./client-side
 npm install
