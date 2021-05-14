@@ -48,10 +48,12 @@ body {
 
 /* pdf */
 @media (max-width: 640px) { 
-  .pdfDetails {
-    width:130px !important;
-    margin: 0 10px !important;
+  .searchResults {
+    justify-content: space-between;
   }
+
+  /* .pdfDetails {
+  } */
 
   .pdfContainer {
     margin: 0 5px !important;

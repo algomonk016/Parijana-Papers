@@ -26,10 +26,11 @@ Modal.setAppElement('#root')
 const MyModal =()=> {
     let closeStyle = "mt-2 mr-2 px-1 w-10 h-10 bg-red-300 text-red-700 hover:bg-red-400 hover:text-red-900 rounded-full absolute right-0 top-0";
     useEffect(()=>{
-        if(localStorage.getItem('ModalOpened') != 1) {
-            setTimeout(openModal, 3300)
-            console.log(`modalOpened ${localStorage.getItem('ModalOpened')}`)
-            localStorage.setItem('ModalOpened', 1)
+        if(typeof(Storage)!='undefined') {
+            if(sessionStorage.getItem('isModalOpen')===null) {
+                setTimeout(openModal, 3300)
+                sessionStorage.setItem('isModalOpen', true)
+            }
         }
     },[])
 

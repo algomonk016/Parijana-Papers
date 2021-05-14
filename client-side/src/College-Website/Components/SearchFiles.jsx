@@ -23,7 +23,6 @@ function SearchFiles() {
             const res = await axios.post(srchUrl, tags)
             // if(res.data != []) setPapers(res.data)
             setPapers(res.data)
-            
         }
     }
 
@@ -47,7 +46,7 @@ function SearchFiles() {
         <div className="container">
             <Animated animationIn="slideInDown" animationOut="slideOutUp" animationInDuration={1000} animationOutDuration={1000} isVisible={true}>
                 <div className="flex justify-center">
-                    <input type="text" onChange={e=>setInpData(e.target.value)} className={inpStyle} placeholder="Search here"/>
+                    <input type="text" onChange={e=>setInpData(e.target.value)} className={inpStyle} placeholder="Search here, ex: MTH-S101 Quiz-2 Sem-1"/>
                     {/* <button onClick={getPapers} className="w-1/6 border ml-5 shadow-md hover:bg-purple-400 hover:text-purple-800 hover:shadow:lg rounded-md bg-purple-300 text-purple-700">Search</button> */}
                 </div>
             </Animated>
@@ -57,7 +56,7 @@ function SearchFiles() {
                     <div className="pdfContainer mt-5">
                         <Animated animationIn="fadeIn" animationOut="slideOutUp" animationInDuration={800} isVisible={true}>
                             <Heading title="Search Results" />
-                            <div className="shadow-md p-3 bg-blue-100 flex flex-row flex-wrap relative">
+                            <div className="shadow-md py-3 md:pl-5 bg-blue-100 flex flex-row flex-wrap relative searchResults">
                                 {papersList}
                             </div>
                         </Animated>
