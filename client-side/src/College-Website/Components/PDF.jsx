@@ -2,15 +2,15 @@ import React from 'react'
 import FileDetails from './FileDetails'
 import pic from '../Assests/Pics/pdf.png'
 import axios from 'axios'
-import {Animated} from "react-animated-css";
+import { Animated } from "react-animated-css";
 import '../style.css'
 
-function PDF(props) {
+let PDF = (props) => {
     // let downloadLink = props.downloadLink
     let viewLink = props.viewLink
-    const handleOpen = async ()=> {
-        let axiosUrl = 'college/document/inc/'+props.id
-        axios.patch(axiosUrl, {id: props.id})
+    const handleOpen = async () => {
+        let axiosUrl = 'college/document/inc/' + props.id
+        axios.patch(axiosUrl, { id: props.id })
         window.open(viewLink)
     }
 
