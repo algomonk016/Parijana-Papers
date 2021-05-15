@@ -1,61 +1,112 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import Heading from './Heading'
 import PDF from './PDF'
-import {Animated} from "react-animated-css";
+import { Animated } from "react-animated-css";
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 function FilesContainer() {
     let url = '/college/document/get'
 
-    const [mostViews, setMostViews] = useState()
-    const [recentlyUploaded, setRecentlyUploaded] = useState()
+    const [year1, setyear1] = useState()
+    const [year2, setyear2] = useState()
+    const [year3, setyear3] = useState()
+    const [year4, setyear4] = useState()
 
     useEffect(() => {
         getDocuments()
-        // console.log(recentlyUploaded)
     }, [])
 
-    const getDocuments = async ()=> {
+    const getDocuments = async () => {
         const res = await axios.get(url)
-        setRecentlyUploaded(await res.data.data1)
-        setMostViews(await res.data.data2)
-        // console.log(res.data.data1)
+        setyear1(await res.data.year1)
+        setyear2(await res.data.year2)
+        setyear3(await res.data.year3)
+        setyear4(await res.data.year4)
     }
 
-    let recUploaded
-    if(recentlyUploaded!=null) {
-        recUploaded = recentlyUploaded.map(obj=> {
-            return(
-                <PDF id={obj._id} subCode = {obj.subCode} tags = {obj.tags} viewLink = {obj.viewLink} downloadLink = {obj.downloadLink} />
+    let firstYearPapers
+    if (year1 != null) {
+        firstYearPapers = year1.map(obj => {
+            return (
+                <PDF id={obj._id} subCode={obj.subCode} tags={obj.tags} viewLink={obj.viewLink} downloadLink={obj.downloadLink} />
             )
         })
     }
 
-    let mostViewd
-    if(mostViews!=null) {
-        mostViewd = mostViews.map(obj=> {
-            return(
-                <PDF id={obj._id} subCode = {obj.subCode} tags = {obj.tags} url = {obj.filePath}/>
+    let secondYearPapers
+    if (year2 != null) {
+        secondYearPapers = year2.map(obj => {
+            return (
+                <PDF id={obj._id} subCode={obj.subCode} tags={obj.tags} url={obj.filePath} />
             )
         })
     }
+
+    let thirdYearPapers
+    if (year3 != null) {
+        thirdYearPapers = year3.map(obj => {
+            return (
+                <PDF id={obj._id} subCode={obj.subCode} tags={obj.tags} url={obj.filePath} />
+            )
+        })
+    }
+
+    let fourthYearPapers
+    if (year4 != null) {
+        fourthYearPapers = year4.map(obj => {
+            return (
+                <PDF id={obj._id} subCode={obj.subCode} tags={obj.tags} url={obj.filePath} />
+            )
+        })
+    }
+
+    let btnStyle = 'absolute top-0 right-0 text-xs text-purple-800 font-semibold hover:bg-gray-100 p-2 rounded-lg shadow hover:shadow-md'
+    let divStyle = 'bg-gray-200 flex rounded flex-row overflow-x-scroll pdfContainer'
 
     return (
         <div className="flex justify-center">
-            <div className="container w-screen py-4">
+            <div className="container w-screen py-0">
                 <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
-                    <Heading title='recently uploaded' />
-                    <div className="bg-gray-200 flex rounded flex-row overflow-x-scroll pdfContainer">
-                        {recUploaded}
+                    <div className="relative">
+                        <Heading title='1st year' />
+                        <Link to='/' className={btnStyle} >Show More</Link>
+                        <div className={divStyle}>
+                            { firstYearPapers }
+                        </div>
                     </div>
                 </Animated>
-                <br/><br/>
-                <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={200} isVisible={true}>
-                    <Heading title='Most Viewed' />
-                    <div className="bg-blue-100 flex flex-around flex-row overflow-x-scroll pdfContainer">
-                        {mostViewd}
+                <br />
+                <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
+                    <div className="relative">
+                        <Heading title='2nd year' />
+                        <Link to='/' className={btnStyle} >Show More</Link>
+                        <div className={divStyle}>
+                            { secondYearPapers }
+                        </div>
                     </div>
                 </Animated>
+                <br />
+                <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
+                    <div className="relative">
+                        <Heading title='3rd year' />
+                        <Link to='/' className={btnStyle} >Show More</Link>
+                        <div className={divStyle}>
+                            { thirdYearPapers }
+                        </div>
+                    </div>
+                </Animated>
+                <br />
+                <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
+                    <div className="relative">
+                        <Heading title='4th year' />
+                        <Link to='/' className={btnStyle} >Show More</Link>
+                        <div className={divStyle}>
+                            { fourthYearPapers }
+                        </div>
+                    </div>
+                </Animated>
+                <br />
             </div>
         </div>
     )

@@ -30,11 +30,34 @@ router.get('/', async(req, res)=> {
     res.json(data)
 })
 
-// show 10 files on user page
+// show 20 files on user page
 router.get('/get', async(req, res)=> {
-    const data1 = await Documents.find().sort({dateAdded:-1}).limit(10)
-    const data2 = await Documents.find().sort({views:-1}).limit(10)
-    res.json({data1: data1, data2: data2})
+    const year1 = await Documents.find({
+            tags: {
+                $all: 'year-1'
+            }
+        }).sort({dateAdded:-1}).limit(20)
+    
+    const year2 = await Documents.find({
+        tags: {
+            $all: 'year-2'
+        }
+    }).sort({dateAdded:-1}).limit(20)
+
+    const year3 = await Documents.find({
+        tags: {
+            $all: 'year-3'
+        }
+    }).sort({dateAdded:-1}).limit(20)
+
+    const year4 = await Documents.find({
+        tags: {
+            $all: 'year-4'
+        }
+    }).sort({dateAdded:-1}).limit(20)
+
+
+    res.json({year1: year1, year2: year2, year3: year3, year4: year4})
 })
 
 // get one file
