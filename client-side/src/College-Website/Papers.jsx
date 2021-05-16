@@ -6,7 +6,7 @@ import MessageForStudents from './Components/MessageForStudents'
 
 let Papers = () => {
     useEffect(() => {
-        document.title = 'Question Papers'
+        document.title = 'Question Papers - Parijana Papers'
     }, [])
     return (
         <div className="mb-5 pb-5">

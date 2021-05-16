@@ -4,7 +4,7 @@ import SupportHero from './Components/SupportHero'
 
 function Support() {
     useEffect(()=>{
-        document.title = 'Support Us'
+        document.title = 'Support Us - Parijana Papers'
     },[])
     return (
         <div className="container md:grid md:grid-cols-2 gap-5 rounded-lg mx-auto justify-around text-gray-600 body-font relative py-5">

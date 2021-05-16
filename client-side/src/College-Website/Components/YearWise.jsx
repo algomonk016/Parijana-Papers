@@ -19,6 +19,7 @@ const YearWise = () => {
     const [it, setit] = useState()
 
     useEffect(()=>{
+        document.title = `Year-${params[0]} - Parijana Papers`
         getAllBranchPapers()
     },[])
 

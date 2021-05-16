@@ -15,6 +15,7 @@ const BranchWise = () => {
     const [even, seteven] = useState()
 
     useEffect(()=> {
+        document.title = `${params[0].toUpperCase()} Year-${params[1]} - Parijana Papers`
         getBothSemPapers()
     }, [])
 

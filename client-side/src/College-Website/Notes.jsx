@@ -4,7 +4,7 @@ import comeBack from './Assests/Pics/come-back-later.gif'
 
 function Notes() {
     useEffect(()=>{
-        document.title = 'Notes'
+        document.title = 'Notes - Parijana Papers'
     },[])
     
     return (

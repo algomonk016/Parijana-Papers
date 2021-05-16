@@ -80,6 +80,9 @@ const MyModal =()=> {
                         <Animated animationIn="fadeInDown" animationOut="slideOutUp" animationInDuration={700} animationInDelay={300} isVisible={true}>
                             <ModalMessage msg="Use Subject codes, ex: MTHS-101 or MTH-S-101" />
                         </Animated>
+                        <Animated animationIn="fadeInDown" animationOut="slideOutUp" animationInDuration={700} animationInDelay={300} isVisible={true}>
+                            <ModalMessage msg="Use Course Years, ex: Year-1" />
+                        </Animated>
                         <Animated animationIn="fadeInDown" animationOut="slideOutUp" animationInDuration={700} animationInDelay={350} isVisible={true}>
                             <ModalMessage msg="Use Semester numbers, ex: SEM-1" />
                         </Animated>
