@@ -4,6 +4,7 @@ import PDF from './PDF'
 import { Animated } from "react-animated-css";
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import noDataFound from '../Assests/Pics/noDataFound.png'
 
 function FilesContainer() {
     let url = '/college/document/get'
@@ -25,44 +26,45 @@ function FilesContainer() {
         setyear4(await res.data.year4)
     }
 
-    let firstYearPapers
+    let firstYearPapers = []
     if (year1 != null) {
         firstYearPapers = year1.map(obj => {
             return (
-                <PDF id={obj._id} subCode={obj.subCode} tags={obj.tags} viewLink={obj.viewLink} downloadLink={obj.downloadLink} />
+                <PDF key={obj._id} id={obj._id} subCode={obj.subCode} tags={obj.tags} viewLink={obj.viewLink} downloadLink={obj.downloadLink} />
             )
         })
     }
 
-    let secondYearPapers
+    let secondYearPapers = []
     if (year2 != null) {
         secondYearPapers = year2.map(obj => {
             return (
-                <PDF id={obj._id} subCode={obj.subCode} tags={obj.tags} url={obj.filePath} />
+                <PDF key={obj._id} id={obj._id} subCode={obj.subCode} tags={obj.tags} url={obj.filePath} />
             )
         })
     }
 
-    let thirdYearPapers
+    let thirdYearPapers = []
     if (year3 != null) {
         thirdYearPapers = year3.map(obj => {
             return (
-                <PDF id={obj._id} subCode={obj.subCode} tags={obj.tags} url={obj.filePath} />
+                <PDF key={obj._id} id={obj._id} subCode={obj.subCode} tags={obj.tags} url={obj.filePath} />
             )
         })
     }
 
-    let fourthYearPapers
+    let fourthYearPapers = []
     if (year4 != null) {
         fourthYearPapers = year4.map(obj => {
             return (
-                <PDF id={obj._id} subCode={obj.subCode} tags={obj.tags} url={obj.filePath} />
+                <PDF key={obj._id} id={obj._id} subCode={obj.subCode} tags={obj.tags} url={obj.filePath} />
             )
         })
     }
 
     let btnStyle = 'absolute top-0 right-0 text-xs text-purple-800 font-semibold hover:bg-gray-100 p-2 rounded-lg shadow hover:shadow-md'
     let divStyle = 'bg-gray-200 flex rounded flex-row overflow-x-scroll pdfContainer'
+    let noResult = <img src = {noDataFound} className="w-64" />
 
     return (
         <div className="flex justify-center">
@@ -70,9 +72,9 @@ function FilesContainer() {
                 <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
                     <div className="relative">
                         <Heading title='1st year' />
-                        <Link to='/' className={btnStyle} >Show More</Link>
+                        <Link to='/college/papers/year/1' className={btnStyle} >Show More</Link>
                         <div className={divStyle}>
-                            { firstYearPapers }
+                            { firstYearPapers < 1 ? noResult : firstYearPapers }
                         </div>
                     </div>
                 </Animated>
@@ -80,9 +82,9 @@ function FilesContainer() {
                 <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
                     <div className="relative">
                         <Heading title='2nd year' />
-                        <Link to='/' className={btnStyle} >Show More</Link>
+                        <Link to='/college/papers/year/2' className={btnStyle} >Show More</Link>
                         <div className={divStyle}>
-                            { secondYearPapers }
+                            { secondYearPapers < 1 ? noResult : secondYearPapers }
                         </div>
                     </div>
                 </Animated>
@@ -90,9 +92,9 @@ function FilesContainer() {
                 <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
                     <div className="relative">
                         <Heading title='3rd year' />
-                        <Link to='/' className={btnStyle} >Show More</Link>
+                        <Link to='/college/papers/year/3' className={btnStyle} >Show More</Link>
                         <div className={divStyle}>
-                            { thirdYearPapers }
+                            { thirdYearPapers.length < 1 ? noResult : thirdYearPapers }
                         </div>
                     </div>
                 </Animated>
@@ -100,9 +102,9 @@ function FilesContainer() {
                 <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
                     <div className="relative">
                         <Heading title='4th year' />
-                        <Link to='/' className={btnStyle} >Show More</Link>
+                        <Link to='/college/papers/year/4' className={btnStyle} >Show More</Link>
                         <div className={divStyle}>
-                            { fourthYearPapers }
+                            { fourthYearPapers.length < 1 ? noResult : fourthYearPapers  }
                         </div>
                     </div>
                 </Animated>
