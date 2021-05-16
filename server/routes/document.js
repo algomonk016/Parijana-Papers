@@ -60,12 +60,94 @@ router.get('/get', async(req, res)=> {
     res.json({year1: year1, year2: year2, year3: year3, year4: year4})
 })
 
+// get year wise
+router.get('/get/:year', async (req, res)=> {
+    const year = 'year-' + req.params.year
+    let tagsCSE = [year, 'branch-cse']
+    let tagsECE = [year, 'branch-ece']
+    let tagsMEE = [year, 'branch-mee']
+    let tagsCHE = [year, 'branch-che']
+    let tagsMSME = [year, 'branch-msme']
+    let tagsIT = [year, 'branch-it']
+
+    try {
+        const cse = await Documents.find({
+            tags: {
+                $all: tagsCSE
+            }
+        }).sort({dateAdded:-1}).limit(20)
+
+        const ece = await Documents.find({
+            tags: {
+                $all: tagsECE
+            }
+        }).sort({dateAdded:-1}).limit(20)
+
+        const mee = await Documents.find({
+            tags: {
+                $all: tagsMEE
+            }
+        }).sort({dateAdded:-1}).limit(20)
+
+        const che = await Documents.find({
+            tags: {
+                $all: tagsCHE
+            }
+        }).sort({dateAdded:-1}).limit(20)
+
+        const msme = await Documents.find({
+            tags: {
+                $all: tagsMSME
+            }
+        }).sort({dateAdded:-1}).limit(20)
+
+        const it = await Documents.find({
+            tags: {
+                $all: tagsIT
+            }
+        }).sort({dateAdded:-1}).limit(20)
+
+        res.json({cse: cse, ece:ece, mee:mee,che:che, it:it, msme:msme})
+    } catch (error) {
+        console.log(error.message)
+    }
+
+})
+
+// get branch wise
+router.get('/get/:year/:branch', async (req, res)=> {
+    const year = 'year-' + req.params.year
+    const branch = 'branch-' + req.params.branch
+
+    let tagsOdd = [year, branch, 'odd']
+    let tagsEven = [year, branch, 'even']
+
+    try {
+        const odd = await Documents.find({
+            tags:{
+                $all: tagsOdd
+            }
+        }).sort({dateAdded:-1}).limit(20)
+
+        const even = await Documents.find({
+            tags: {
+                $all: tagsEven
+            }
+        }).sort({dateAdded:-1}).limit(20)
+
+        res.json({odd:odd, even:even})
+    } catch(err) {
+        console.log(err.message)
+    }
+
+})
+
 // get one file
 router.get('/:id', getDocument ,async (req, res) => {
     res.json(res.document)
 })
 
-// store pdf in static folder
+// store pdf in static folder and upload in drive
 router.post('/', async (req, res)=> {
     if(res.files === null) return res.status(400).json({msg: 'No file uploaded'})
     const file = req.files.file

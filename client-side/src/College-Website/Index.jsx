@@ -16,6 +16,7 @@ import EditAdmin from './EditAdmin'
 import {Animated} from "react-animated-css";
 import Footer from './Components/Footer'
 import './style.css'
+import Categories from './Categories';
 
 let CollegeApp =() => {
     let url = window.location.href
@@ -28,10 +29,14 @@ let CollegeApp =() => {
                 {isAdmin ? <AdminNavbar /> : <Header />}
             </Animated>
             <Switch>
+                {/* users */}
                 <Route exact path='/college/support' component={Support} />
                 <Route exact path='/college/notes' component={Notes} />
                 <Route path='/college/' exact component={Papers} />
                 <Route path='/college/papers' exact component={Papers} />
+                <Route path='/college/papers/year/' component={Categories} />
+                
+                {/* admins */}
                 <Route path='/college/adminlogin' exact component={LoginAdmin} />
                 <Route path='/college/admin' exact component={Admin} />
                 <Route path='/college/adminPapers' exact component={AdminPapers} />

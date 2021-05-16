@@ -18,8 +18,21 @@ let SearchFiles =()=> {
 
     const getPapers = async () => {
         const srchUrl = url + '/search'
-        if (inpData) {
-            let tags = inpData.trim().toLowerCase().split(' ')
+
+        const year = window.location.href
+        let params = year.split('/')
+        params.reverse()
+
+        let newInpData = inpData.trim()
+
+        if(params[0].length === 1) {
+            newInpData += ` year-${params[0]}`
+        } else if(params[0].length === 3) {
+            newInpData += ` year-${params[1]} branch-${params[0]}`
+        }
+
+        if (newInpData) {
+            let tags = newInpData.toLowerCase().split(' ')
             const res = await axios.post(srchUrl, tags)
             setPapers(res.data)
         }
@@ -29,7 +42,7 @@ let SearchFiles =()=> {
     if (papers.length > 0) {
         papersList = papers.map(obj => {
             return (
-                <PDF id={obj._id} subCode={obj.subCode} tags={obj.tags} url={obj.filePath} />
+                <PDF key={obj._id} id={obj._id} subCode={obj.subCode} tags={obj.tags} url={obj.filePath} />
             )
         })
     } else {
