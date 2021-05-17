@@ -38,7 +38,7 @@ let CollegeApp =() => {
                 
                 {/* admins */}
                 <Route path='/college/adminlogin' exact component={LoginAdmin} />
-                <Route path='/college/admin' exact component={Admin} />
+                <Route path='/college/addPapers' exact component={Admin} />
                 <Route path='/college/adminPapers' exact component={AdminPapers} />
                 <Route path='/college/editDocuments' exact component={EditDocuments} />
                 <Route path='/college/editAdmin' exact component={EditAdmin} />

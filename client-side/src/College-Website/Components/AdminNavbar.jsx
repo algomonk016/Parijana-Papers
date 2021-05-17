@@ -20,7 +20,7 @@ function AdminNavbar() {
         admin == true? 
             <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
                 <NavItem icon = {faPager} color='indigo' item='Papers' directTo='/adminPapers'/>
-                <NavItem icon = {faBookOpen} color='red' item='Add Papers' directTo='/admin' />
+                <NavItem icon = {faBookOpen} color='red' item='Add Papers' directTo='/addPapers' />
                 <NavItem icon = {faAddressCard} item='Admins List' directTo='/adminsList' />
                 <button onClick={handleClick}><NavItem icon = {faSignOutAlt} color='red' directTo='/adminlogin' item={'logout ' + localStorage.getItem('admin')}/></button>   
             </nav>
