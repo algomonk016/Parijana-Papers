@@ -4,8 +4,6 @@ const Str = require('@supercharge/strings')
 const fs = require('fs')
 const { google } = require('googleapis')
 const path = require('path')
-
-
 /*=============================================================================*/ 
 // GOOGLE-DRIVE API STUFF
 
@@ -22,7 +20,9 @@ const drive = google.drive({
 	auth: oauth2Client
 })
 
-/*=============================================================================*/ 
+/*========================================================================================================================*/ 
+
+// All get routes lie here
 
 // show all the files (admin)
 router.get('/', async(req, res)=> {
@@ -147,6 +147,10 @@ router.get('/:id', getDocument ,async (req, res) => {
     res.json(res.document)
 })
 
+// ========================================================================================================================
+
+// All post routes lie here
+
 // store pdf in static folder and upload in drive
 router.post('/', async (req, res)=> {
     if(res.files === null) return res.status(400).json({msg: 'No file uploaded'})
@@ -205,6 +209,9 @@ router.post('/search', async (req, res)=>{
     }
 })
 
+// ========================================================================================================================
+
+// All patch routes lie here
 // edit
 router.patch('/:id', getDocument ,async (req, res) => {
     if(req.body.subCode != null) {
@@ -233,6 +240,10 @@ router.patch('/inc/:id', getDocument, async (req, res)=>{
     }
 })
 
+// ========================================================================================================================
+
+// All delete routes lie here
+
 router.delete('/:id', getDocument ,async (req, res) => {
     const {id, subCode, tags, dateAdded, url, driveId, uploadedBy, views } = res.document
 
@@ -245,6 +256,9 @@ router.delete('/:id', getDocument ,async (req, res) => {
         res.json({message: err.message})
     }
 })
+
+// ========================================================================================================================
+// All middlewares lie here
 
 async function getDocument (req, res, next) {
     let document
@@ -270,7 +284,6 @@ async function uploadFileToDrive(filePath, newName) {
                 body: fs.createReadStream(filePath)
             }
         })
-
         return response.data.id
     } catch (error) {
         console.log( 'we failed while uploading ' + error.message)

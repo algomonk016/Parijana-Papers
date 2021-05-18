@@ -17,11 +17,12 @@ import {Animated} from "react-animated-css";
 import Footer from './Components/Footer'
 import './style.css'
 import Categories from './Categories';
+import Success from './Success';
 
 let CollegeApp =() => {
     let url = window.location.href
     url = url.toLowerCase()
-    let isAdmin = url.includes('admin') || url.includes('edit')
+    let isAdmin = url.includes('admin') || url.includes('edit') || url.includes('add')
 
     return (
         <Router>
@@ -35,7 +36,8 @@ let CollegeApp =() => {
                 <Route path='/college/' exact component={Papers} />
                 <Route path='/college/papers' exact component={Papers} />
                 <Route path='/college/papers/year/' component={Categories} />
-                
+                <Route path='/college/support/success' component={Success} />
+            
                 {/* admins */}
                 <Route path='/college/adminlogin' exact component={LoginAdmin} />
                 <Route path='/college/addPapers' exact component={Admin} />

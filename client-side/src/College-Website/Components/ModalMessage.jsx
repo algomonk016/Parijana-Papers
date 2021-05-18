@@ -5,7 +5,7 @@ const ModalMessage = (props) => {
     return (
         <div>
             <FontAwesomeIcon icon={faHandPointRight} />
-            <span className="font-serif tracking-wide m-2 text-sm">{props.msg}</span>
+            <span className="font-serif tracking-wide m-2">{props.msg}</span>
         </div>
     )
 }
