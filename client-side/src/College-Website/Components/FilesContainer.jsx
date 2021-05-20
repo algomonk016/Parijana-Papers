@@ -39,7 +39,7 @@ function FilesContainer() {
     if (year2 != null) {
         secondYearPapers = year2.map(obj => {
             return (
-                <PDF key={obj._id} id={obj._id} subCode={obj.subCode} tags={obj.tags} url={obj.filePath} />
+                <PDF key={obj._id} id={obj._id} subCode={obj.subCode} tags={obj.tags} viewLink={obj.viewLink} downloadLink={obj.downloadLink} />
             )
         })
     }
@@ -48,7 +48,7 @@ function FilesContainer() {
     if (year3 != null) {
         thirdYearPapers = year3.map(obj => {
             return (
-                <PDF key={obj._id} id={obj._id} subCode={obj.subCode} tags={obj.tags} url={obj.filePath} />
+                <PDF key={obj._id} id={obj._id} subCode={obj.subCode} tags={obj.tags} viewLink={obj.viewLink} downloadLink={obj.downloadLink} />
             )
         })
     }
@@ -57,7 +57,7 @@ function FilesContainer() {
     if (year4 != null) {
         fourthYearPapers = year4.map(obj => {
             return (
-                <PDF key={obj._id} id={obj._id} subCode={obj.subCode} tags={obj.tags} url={obj.filePath} />
+                <PDF key={obj._id} id={obj._id} subCode={obj.subCode} tags={obj.tags} viewLink={obj.viewLink} downloadLink={obj.downloadLink} />
             )
         })
     }

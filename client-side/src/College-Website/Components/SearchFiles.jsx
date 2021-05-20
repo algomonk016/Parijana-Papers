@@ -42,7 +42,7 @@ let SearchFiles =()=> {
     if (papers.length > 0) {
         papersList = papers.map(obj => {
             return (
-                <PDF key={obj._id} id={obj._id} subCode={obj.subCode} tags={obj.tags} url={obj.filePath} />
+                <PDF key={obj._id} id={obj._id} subCode={obj.subCode} tags={obj.tags} viewLink={obj.viewLink} downloadLink={obj.downloadLink} />
             )
         })
     } else {
