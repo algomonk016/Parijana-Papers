@@ -71,14 +71,15 @@ const MyModal =()=> {
                         <Animated animationIn="fadeInDown" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
                             <ModalMessage msg="Search for any previous year paper you want" />
                         </Animated>
-                        <Animated animationIn="fadeInDown" animationOut="slideOutUp" animationInDuration={700} animationInDelay={200} isVisible={true}>
-                            <ModalMessage msg="The result will be shown once you completed the keyword" />
-                        </Animated>
-                        <Animated animationIn="fadeInDown" animationOut="slideOutUp" animationInDuration={700} animationInDelay={250} isVisible={true}>
-                            <p className="text-lg m-2 font-serif">For more accurate search results</p>
+                        <Animated animationIn="fadeInDown" animationOut="slideOutUp" animationInDuration={700} animationInDelay={300} isVisible={true}>
+                            <ModalMessage msg="Use Subject name, ex: maths-3 or engg drawing" />
+                            <ModalMessage msg="You can use shortnames also, ex: ed, co, os, thermo and so on" />
                         </Animated>
                         <Animated animationIn="fadeInDown" animationOut="slideOutUp" animationInDuration={700} animationInDelay={300} isVisible={true}>
                             <ModalMessage msg="Use Subject codes, ex: MTHS-101 or MTH-S-101" />
+                        </Animated>
+                        <Animated animationIn="fadeInDown" animationOut="slideOutUp" animationInDuration={700} animationInDelay={300} isVisible={true}>
+                            <ModalMessage msg="Use Exam Type, ex: Quiz-2 or Mid or End" />
                         </Animated>
                         <Animated animationIn="fadeInDown" animationOut="slideOutUp" animationInDuration={700} animationInDelay={300} isVisible={true}>
                             <ModalMessage msg="Use Course Years, ex: Year-1" />

@@ -14,7 +14,7 @@ function LoginAdmin() {
     })
 
     useEffect(()=>{
-        if(localStorage.getItem('admin') != null) {
+        if(sessionStorage.getItem('isAdmin') != null) {
             window.location.replace('/college/adminPapers')
         }
         document.title = 'Admin Login'
@@ -28,7 +28,7 @@ function LoginAdmin() {
                 if(res.data.adminId) {
                     console.log(res.data)
                     if(res.data.hasPermission === true) {
-                        localStorage.setItem('admin', formData.adminId)
+                        sessionStorage.setItem('isAdmin', formData.adminId)
                         window.location.replace('/college/adminPapers')
                     } else {
                         alert('you are not authorized')

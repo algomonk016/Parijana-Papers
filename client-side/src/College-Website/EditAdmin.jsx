@@ -12,7 +12,7 @@ const EditAdmin = () => {
     });
 
     useEffect(() => {
-        if (localStorage.getItem('admin') == null) {
+        if(sessionStorage.getItem('isAdmin') == null) {
             window.location.replace('/college/adminlogin')
         }
         getData()

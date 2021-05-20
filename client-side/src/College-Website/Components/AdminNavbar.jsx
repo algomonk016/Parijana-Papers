@@ -6,13 +6,13 @@ import brandPic from '../Assests/Pics/army.jpg'
 function AdminNavbar() {
     const [admin, setAdmin] = useState(false)
     useEffect(()=> {
-        if(localStorage.getItem('admin') != null) {
+        if(sessionStorage.getItem('isAdmin')!==null) {
             setAdmin(true)
         }
     }, [])
     
     const handleClick = () => {
-        localStorage.removeItem('admin')
+        sessionStorage.removeItem('isAdmin')
         setAdmin(false)
     }
 
@@ -22,7 +22,7 @@ function AdminNavbar() {
                 <NavItem icon = {faPager} color='indigo' item='Papers' directTo='/adminPapers'/>
                 <NavItem icon = {faBookOpen} color='red' item='Add Papers' directTo='/addPapers' />
                 <NavItem icon = {faAddressCard} item='Admins List' directTo='/adminsList' />
-                <button onClick={handleClick}><NavItem icon = {faSignOutAlt} color='red' directTo='/adminlogin' item={'logout ' + localStorage.getItem('admin')}/></button>   
+                <button onClick={handleClick}><NavItem icon = {faSignOutAlt} color='red' directTo='/adminlogin' item={'logout ' + sessionStorage.getItem('isAdmin')}/></button>   
             </nav>
             :
             <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">

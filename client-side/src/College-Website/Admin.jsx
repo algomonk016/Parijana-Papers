@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react'
 import InputLabel from './Components/InputLabel'
 import Heading from './Components/Heading'
 
-function Admin() {
+let Admin = () => {
     let url = '/college/document'
     const [file, setFile] = useState('')
     const [data, setData] = useState({
@@ -12,7 +12,7 @@ function Admin() {
     })
 
     useEffect(()=>{ 
-        if(localStorage.getItem('admin') == null) {
+        if(sessionStorage.getItem('isAdmin') == null) {
             window.location.replace('/college/adminlogin')
         }
         document.title = 'Add Documents'

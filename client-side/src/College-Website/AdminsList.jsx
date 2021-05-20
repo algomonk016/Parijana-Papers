@@ -5,7 +5,7 @@ import axios from 'axios'
 const AdminsList = () => {
     const [admins, setAdmins] = useState()
     useEffect(()=>{
-        if(localStorage.getItem('admin') == null) {
+        if(sessionStorage.getItem('isAdmin') == null) {
             window.location.replace('/college/adminlogin')
         }
         document.title = 'Admins List'
