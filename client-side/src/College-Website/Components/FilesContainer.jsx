@@ -69,7 +69,7 @@ function FilesContainer() {
     return (
         <div className="flex justify-center">
             <div className="container w-screen py-0">
-                <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
+                <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={0} isVisible={true}>
                     <div className="relative">
                         <Heading title='1st year' />
                         <Link to='/college/papers/year/1' className={btnStyle} >Show More</Link>
@@ -79,7 +79,7 @@ function FilesContainer() {
                     </div>
                 </Animated>
                 <br />
-                <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
+                <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={0} isVisible={true}>
                     <div className="relative">
                         <Heading title='2nd year' />
                         <Link to='/college/papers/year/2' className={btnStyle} >Show More</Link>
@@ -89,7 +89,7 @@ function FilesContainer() {
                     </div>
                 </Animated>
                 <br />
-                <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
+                <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={0} isVisible={true}>
                     <div className="relative">
                         <Heading title='3rd year' />
                         <Link to='/college/papers/year/3' className={btnStyle} >Show More</Link>
@@ -99,7 +99,7 @@ function FilesContainer() {
                     </div>
                 </Animated>
                 <br />
-                <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
+                <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={0} isVisible={true}>
                     <div className="relative">
                         <Heading title='4th year' />
                         <Link to='/college/papers/year/4' className={btnStyle} >Show More</Link>

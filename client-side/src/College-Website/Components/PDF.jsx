@@ -15,7 +15,7 @@ let PDF = (props) => {
     }
 
     return (
-        <Animated animationIn="slideInDown" animationOut="slideOutUp" animationInDuration={900} isVisible={true}>
+        <Animated animationIn="zoomIn" animationOut="slideOutUp" animationInDuration={750} isVisible={true}>
             <div onClick={handleOpen} className="shadow-lg w-40 bg-white rounded-md p-3 m-2 cursor-pointer pdfDetails">
                 <img src={pic} className="" />
                 <div className="mt-2"> <FileDetails text={props.subCode} /> </div>
