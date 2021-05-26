@@ -9,7 +9,7 @@ let SupportForm =()=> {
     return (
         <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
             <div className="container p-3 rounded-md shadow-md">
-                <div className="text-center text-gray-700 mb-2 text-xl">
+                <div className="text-center text-gray-700 mb-3 text-xl">
                     <span className="text-3xl">Support Us</span> <br/>
                     By providing 
                     <span className="font-medium"> Notes </span> 

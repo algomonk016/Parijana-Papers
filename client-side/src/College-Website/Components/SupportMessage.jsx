@@ -4,7 +4,7 @@ import {faHandsHelping} from '@fortawesome/free-solid-svg-icons'
 
 function SupportMessage(props) {
     return (
-        <p className="my-2 text-lg">
+        <p className="my-1 text-lg">
             <FontAwesomeIcon icon={faHandsHelping}/> {props.message}
         </p>
     )
