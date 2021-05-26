@@ -76,7 +76,7 @@ const MyModal =()=> {
                             <ModalMessage msg="You can use shortnames also, ex: ed, co, os, thermo and so on" />
                         </Animated>
                         <Animated animationIn="fadeInDown" animationOut="slideOutUp" animationInDuration={700} animationInDelay={300} isVisible={true}>
-                            <ModalMessage msg="Use Subject codes, ex: MTHS-101 or MTH-S-101" />
+                            <ModalMessage msg="Use Subject codes, ex: MTHS-101 or MTH-S101" />
                         </Animated>
                         <Animated animationIn="fadeInDown" animationOut="slideOutUp" animationInDuration={700} animationInDelay={300} isVisible={true}>
                             <ModalMessage msg="Use Exam Type, ex: Quiz-2 or Mid or End" />
