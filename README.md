@@ -72,8 +72,7 @@ Now you're good to go ...
 
 ## 🛠 WIP
 - Dark mode
-- Uploading multiple files at one shot
-- Sending pdf using mail
+- Uploading multiple files at single shot
 - More user friendly UI
 - A super-admin, with super powers
 
