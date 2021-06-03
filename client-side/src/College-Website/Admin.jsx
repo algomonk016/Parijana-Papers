@@ -34,7 +34,7 @@ let Admin = () => {
                 downloadLink: downloadLink,
                 viewLink: viewLink,
                 driveId: driveId,
-                uploadedBy: localStorage.getItem('admin')
+                uploadedBy: sessionStorage.getItem('isAdmin')
             }
             const res2 = await axios.post(url+'/Data', newNode)
             const { isSuccessfull2 } = res2.data

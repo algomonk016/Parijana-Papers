@@ -3,7 +3,6 @@ const Documents = require('../models/document.js')
 const Str = require('@supercharge/strings')
 const fs = require('fs')
 const { google } = require('googleapis')
-const path = require('path')
 /*=============================================================================*/ 
 // GOOGLE-DRIVE API STUFF
 
@@ -191,7 +190,7 @@ router.post('/Data', async (req, res)=> {
         // console.log(newDoc)
         res.json({isSuccessfull2: true})
     } catch(err) {
-        console.log('Error')
+        console.log(err.message)
     }
 })
 
