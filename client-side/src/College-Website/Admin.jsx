@@ -8,7 +8,8 @@ let Admin = () => {
     const [file, setFile] = useState('')
     const [data, setData] = useState({
         subCode: '',
-        tags: []
+        tags: [],
+        teacherName: 'Not Known'
     })
 
     useEffect(()=>{ 
@@ -26,16 +27,18 @@ let Admin = () => {
         try {
             const res = await axios.post(url, formData)
             const { fileName, downloadLink, viewLink, driveId ,isSuccessfull } = res.data
-            
+
             const newNode = {
                 subCode: data.subCode,
                 fileName: fileName,
                 tags: data.tags,
+                teacherName: data.teacherName,
                 downloadLink: downloadLink,
                 viewLink: viewLink,
                 driveId: driveId,
                 uploadedBy: sessionStorage.getItem('isAdmin')
             }
+            console.log(newNode)
             const res2 = await axios.post(url+'/Data', newNode)
             const { isSuccessfull2 } = res2.data
             
@@ -83,7 +86,16 @@ let Admin = () => {
                         type="text" 
                         placeholder="Notes of MTHS-101, ISCS-101 2k19" 
                         className={inpStyle}
-                        onChange = {e => setData({...data, subCode: e.target.value})}
+                        onChange = {e => setData({...data, subCode: e.target.value.trim()})}
+                    />
+                </div>
+                <div className="my-3">
+                    <InputLabel label="Enter Teacher's Name"/>
+                    <input 
+                        type="text" 
+                        placeholder="Enter only If you know" 
+                        className={inpStyle}
+                        onChange = {e => setData({...data, teacherName: e.target.value.trim()})}
                     />
                 </div>
                 <div className="my-3">

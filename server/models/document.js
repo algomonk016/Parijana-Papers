@@ -9,6 +9,10 @@ const documentSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    teacherName: {
+        type: String,
+        required: true
+    },
     tags: {
         type: Array,
         required: true

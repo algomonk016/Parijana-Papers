@@ -180,6 +180,7 @@ router.post('/Data', async (req, res)=> {
         documentData = new Documents({
             subCode: req.body.subCode,
             fileName: req.body.fileName,
+            teacherName: req.body.teacherName,
             tags: req.body.tags,
             downloadLink: req.body.downloadLink,
             viewLink: req.body.viewLink,
@@ -212,19 +213,23 @@ router.post('/search', async (req, res)=>{
 
 // All patch routes lie here
 // edit
-router.patch('/:id', getDocument ,async (req, res) => {
-    if(req.body.subCode != null) {
+router.patch('/:id', getDocument ,async(req, res)=>{
+    if(req.body.subCode != null){
         res.document.subCode = req.body.subCode
     }
-    
-    if(req.body.tags != null) {
+
+    if(req.body.teacherName != null){
+        res.document.teacherName = req.body.teacherName
+    }
+
+    if(req.body.tags != null){
         res.document.tags = req.body.tags
     }
     
-    try {
+    try{
         const updatedFile = await res.document.save()
         res.json({isSuccess: true})
-    }catch(err) {
+    } catch(err){
         res.json({isSuccess:false})
     }
 })
@@ -243,15 +248,15 @@ router.patch('/inc/:id', getDocument, async (req, res)=>{
 
 // All delete routes lie here
 
-router.delete('/:id', getDocument ,async (req, res) => {
+router.delete('/:id', getDocument ,async (req, res) =>{
     const {id, subCode, tags, dateAdded, url, driveId, uploadedBy, views } = res.document
 
     deleteFileFromDrive(driveId)
 
-    try {
+    try{
         await res.document.remove()
         res.json({isSuccessfull: true, subCode: subCode, id: id})
-    } catch(err) {
+    } catch(err){
         res.json({message: err.message})
     }
 })
@@ -259,12 +264,12 @@ router.delete('/:id', getDocument ,async (req, res) => {
 // ========================================================================================================================
 // All middlewares lie here
 
-async function getDocument (req, res, next) {
+async function getDocument (req, res, next){
     let document
-    try {
+    try{
         document = await Documents.findById(req.params.id)
-        if(document==null) return res.status(404).json({message: 'Cannot find subscriber'})
-    } catch(err) {
+        if(document==null) return res.status(404).json({message: 'Cannot find Document'})
+    } catch(err){
         return res.status(500).json({message: err.message})
     }
     res.document = document

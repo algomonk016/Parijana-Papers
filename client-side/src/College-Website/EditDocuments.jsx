@@ -9,19 +9,21 @@ let EditDocuments = () => {
 
     const [data, setData] = useState({
         subCode: '',
-        tags: []
+        tags: [],
+        teacherName: 'Not Known'
     })
 
     const [prevData, setPrevData] = useState({
         subCode: '',
+        teacherName:'',
         tags: ''
     })
 
-    const getData = async () => {
+    const getData = async()=>{
         const axiosUrl = '/college/document/' + id
         const res = await axios.get(axiosUrl)
-        setPrevData({ subCode: res.data.subCode, tags: res.data.tags.toString() })
-        setData({ subCode: res.data.subCode, tags: res.data.tags.toString() })
+        setPrevData({ subCode: res.data.subCode, teacherName: res.data.teacherName, tags: res.data.tags.toString() })
+        setData({ subCode: res.data.subCode, teacherName: res.data.teacherName, tags: res.data.tags.toString() })
     }
 
     useEffect(() => {
@@ -40,6 +42,7 @@ let EditDocuments = () => {
 
         const newNode = {
             subCode: data.subCode,
+            teacherName: data.teacherName,
             tags: data.tags
         }
 
@@ -88,7 +91,17 @@ let EditDocuments = () => {
                         type="text"
                         className={inpStyle}
                         defaultValue={prevData.subCode}
-                        onChange={e => setData({ ...data, subCode: e.target.value })}
+                        onChange={e => setData({ ...data, subCode: e.target.value.trim() })}
+                    />
+                </div>
+                <div className="my-3">
+                    <InputLabel label="Enter Teacher's Name"/>
+                    <input 
+                        type="text" 
+                        placeholder="Enter only If you know" 
+                        className={inpStyle}
+                        defaultValue={prevData.teacherName}
+                        onChange = {e => setData({...data, teacherName: e.target.value.trim()})}
                     />
                 </div>
                 <div className="my-3">
