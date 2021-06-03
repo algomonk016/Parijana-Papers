@@ -42,10 +42,11 @@ const AdminPapers = async => {
     
     // contains all the papers and display it in table
     let papersList
+    let key = 1;
     if(papers!=null) {
         papersList = papers.map(obj => {
             return(
-                <Documents id={obj._id} subCode = {obj.subCode} tags = {obj.tags.length} dateAdded = {obj.dateAdded} url = {obj.viewLink} driveId = {obj.driveId} uploadedBy = {obj.uploadedBy} views = {obj.views} />
+                <Documents key={key} ind={key++} id={obj._id} subCode = {obj.subCode} tags = {obj.tags.length} dateAdded = {obj.dateAdded} url = {obj.viewLink} driveId = {obj.driveId} uploadedBy = {obj.uploadedBy} views = {obj.views} />
             )
         })
     }
@@ -59,6 +60,7 @@ const AdminPapers = async => {
 
             <table className="w-4/5 mx-auto mb-10">
                 <thead>
+                    <td className="px-5"> <Heading title='S.No'/> </td>
                     <td className="px-5"> <Heading title='PDF'/> </td>
                     <td className="px-5"> <Heading title='tags'/> </td>
                     <td className="px-5"> <Heading title='uploaded by'/> </td>
