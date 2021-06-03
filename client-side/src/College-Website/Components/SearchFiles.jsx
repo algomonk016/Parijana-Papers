@@ -40,10 +40,21 @@ let SearchFiles =()=> {
 
     let papersList
     if (papers.length > 0) {
+        let teacher=''
         papersList = papers.map(obj => {
-            return (
-                <PDF key={obj._id} id={obj._id} subCode={obj.subCode} tags={obj.tags} viewLink={obj.viewLink} downloadLink={obj.downloadLink} />
-            )
+            if(obj.teacherName === teacher){
+                return (
+                    <PDF key={obj._id} id={obj._id} subCode={obj.subCode} tags={obj.tags} viewLink={obj.viewLink} downloadLink={obj.downloadLink} />
+                )
+            } else{
+                teacher = obj.teacherName
+                return(
+                    <>
+                        <Heading style="container" title={teacher}/> <br />
+                        <PDF key={obj._id} id={obj._id} subCode={obj.subCode} tags={obj.tags} viewLink={obj.viewLink} downloadLink={obj.downloadLink} />
+                    </>
+                )
+            }
         })
     } else {
         papersList =

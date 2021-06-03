@@ -201,8 +201,8 @@ router.post('/search', async (req, res)=>{
         let pprs = await Documents.find({
             tags: {
                 $all: req.body,
-            },
-        })
+            }
+        }).sort({teacherName:1})
         res.json(pprs)
     }catch(err) {
         res.json(err)
