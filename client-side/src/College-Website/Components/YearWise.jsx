@@ -96,7 +96,7 @@ const YearWise = () => {
                     <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
                         <div className="relative">
                             <Heading title='CSE' />
-                            <Link to={params[0] + '/cse'} className={btnStyle} >Show More</Link>
+                            <Link to={params[0] + '/cse'} className={btnStyle} >Explore</Link>
                             <div className={divStyle}>
                                 { csePapers.length < 1 ? noResult : csePapers }
                             </div>
@@ -106,7 +106,7 @@ const YearWise = () => {
                     <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
                         <div className="relative">
                             <Heading title='ECE' />
-                            <Link to={params[0] + '/ece'} className={btnStyle} >Show More</Link>
+                            <Link to={params[0] + '/ece'} className={btnStyle} >Explore</Link>
                             <div className={divStyle}>
                                 { ecePapers.length < 1 ? noResult : ecePapers }
                             </div>
@@ -116,7 +116,7 @@ const YearWise = () => {
                     <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
                         <div className="relative">
                             <Heading title='MEE' />
-                            <Link to={params[0] + '/mee'} className={btnStyle} >Show More</Link>
+                            <Link to={params[0] + '/mee'} className={btnStyle} >Explore</Link>
                             <div className={divStyle}>
                                 { meePapers.length < 1 ? noResult : meePapers }
                             </div>
@@ -126,7 +126,7 @@ const YearWise = () => {
                     <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
                         <div className="relative">
                             <Heading title='CHE' />
-                            <Link to={params[0] + '/che'} className={btnStyle} >Show More</Link>
+                            <Link to={params[0] + '/che'} className={btnStyle} >Explore</Link>
                             <div className={divStyle}>
                                 { chePapers.length < 1 ? noResult : chePapers }
                             </div>
@@ -136,7 +136,7 @@ const YearWise = () => {
                     <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
                         <div className="relative">
                             <Heading title='IT' />
-                            <Link to={params[0] + '/it'} className={btnStyle} >Show More</Link>
+                            <Link to={params[0] + '/it'} className={btnStyle} >Explore</Link>
                             <div className={divStyle}>
                                 { itPapers.length < 1 ? noResult : itPapers }
                             </div>
@@ -146,7 +146,7 @@ const YearWise = () => {
                     <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
                         <div className="relative">
                             <Heading title='MSME' />
-                            <Link to={params[0] + '/msme'} className={btnStyle} >Show More</Link>
+                            <Link to={params[0] + '/msme'} className={btnStyle} >Explore</Link>
                             <div className={divStyle}>
                                 { msmePapers.length < 1 ? noResult : msmePapers }
                             </div>

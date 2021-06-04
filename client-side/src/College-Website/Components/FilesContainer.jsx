@@ -72,7 +72,7 @@ function FilesContainer() {
                 <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={0} isVisible={true}>
                     <div className="relative">
                         <Heading title='1st year' />
-                        <Link to='/college/papers/year/1' className={btnStyle} >Show More</Link>
+                        <Link to='/college/papers/year/1' className={btnStyle} >Explore</Link>
                         <div className={divStyle}>
                             { firstYearPapers < 1 ? noResult : firstYearPapers }
                         </div>
@@ -82,7 +82,7 @@ function FilesContainer() {
                 <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={0} isVisible={true}>
                     <div className="relative">
                         <Heading title='2nd year' />
-                        <Link to='/college/papers/year/2' className={btnStyle} >Show More</Link>
+                        <Link to='/college/papers/year/2' className={btnStyle} >Explore</Link>
                         <div className={divStyle}>
                             { secondYearPapers < 1 ? noResult : secondYearPapers }
                         </div>
@@ -92,7 +92,7 @@ function FilesContainer() {
                 <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={0} isVisible={true}>
                     <div className="relative">
                         <Heading title='3rd year' />
-                        <Link to='/college/papers/year/3' className={btnStyle} >Show More</Link>
+                        <Link to='/college/papers/year/3' className={btnStyle} >Explore</Link>
                         <div className={divStyle}>
                             { thirdYearPapers.length < 1 ? noResult : thirdYearPapers }
                         </div>
@@ -102,7 +102,7 @@ function FilesContainer() {
                 <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={0} isVisible={true}>
                     <div className="relative">
                         <Heading title='4th year' />
-                        <Link to='/college/papers/year/4' className={btnStyle} >Show More</Link>
+                        <Link to='/college/papers/year/4' className={btnStyle} >Explore</Link>
                         <div className={divStyle}>
                             { fourthYearPapers.length < 1 ? noResult : fourthYearPapers  }
                         </div>
