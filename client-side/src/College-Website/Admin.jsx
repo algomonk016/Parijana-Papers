@@ -38,7 +38,7 @@ let Admin = () => {
                 driveId: driveId,
                 uploadedBy: sessionStorage.getItem('isAdmin')
             }
-            console.log(newNode)
+            // console.log(newNode)
             const res2 = await axios.post(url+'/Data', newNode)
             const { isSuccessfull2 } = res2.data
             
@@ -93,7 +93,7 @@ let Admin = () => {
                     <InputLabel label="Enter Teacher's Name"/>
                     <input 
                         type="text" 
-                        placeholder="Enter only If you know" 
+                        placeholder="Enter 'Not Known' if don't know" 
                         className={inpStyle}
                         onChange = {e => setData({...data, teacherName: e.target.value.trim()})}
                     />

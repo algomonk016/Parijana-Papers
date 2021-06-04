@@ -98,7 +98,7 @@ let EditDocuments = () => {
                     <InputLabel label="Enter Teacher's Name"/>
                     <input 
                         type="text" 
-                        placeholder="Enter only If you know" 
+                        placeholder="Enter 'Not Known' if you don't know"
                         className={inpStyle}
                         defaultValue={prevData.teacherName}
                         onChange = {e => setData({...data, teacherName: e.target.value.trim()})}

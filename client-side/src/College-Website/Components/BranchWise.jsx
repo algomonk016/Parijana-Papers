@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Heading from './Heading'
 import { Animated } from "react-animated-css";
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 import noDataFound from '../Assests/Pics/noDataFound.png'
 import PDF from './PDF'
 
@@ -44,6 +43,28 @@ const BranchWise = () => {
         })
     }
 
+    const handleOdd =()=>{
+        document.getElementById('searchField').value='odd';
+        document.getElementById('searchField').click();
+        document.getElementById('searchField').value='';
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        });
+    }
+
+    const handleEven =()=>{
+        document.getElementById('searchField').value='even';
+        document.getElementById('searchField').click();
+        document.getElementById('searchField').value='';
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        });
+    }
+
     let btnStyle = 'absolute top-0 right-0 text-xs text-purple-800 font-semibold hover:bg-gray-100 p-2 rounded-lg shadow hover:shadow-md'
     let divStyle = 'bg-gray-200 flex rounded flex-row overflow-x-scroll pdfContainer'
     let noResult = <img src = {noDataFound} className="w-64" />
@@ -55,7 +76,7 @@ const BranchWise = () => {
                     <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
                         <div className="relative">
                             <Heading title='Odd Sem' />
-                            {/* <Link to={params[0] + '/cse'} className={btnStyle} >Show More</Link> */}
+                            <button onClick={handleOdd} className={btnStyle} >Show All</button>
                             <div className={divStyle}>
                                 { oddPapers.length < 1 ? noResult : oddPapers }
                             </div>
@@ -65,7 +86,7 @@ const BranchWise = () => {
                     <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
                         <div className="relative">
                             <Heading title='even sem' />
-                            {/* <Link to={params[0] + '/ece'} className={btnStyle} >Show More</Link> */}
+                            <button onClick={handleEven} className={btnStyle} >Show All</button>
                             <div className={divStyle}>
                                 { evenPapers.length < 1 ? noResult : evenPapers }
                             </div>
