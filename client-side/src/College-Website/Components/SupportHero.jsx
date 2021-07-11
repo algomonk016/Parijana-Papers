@@ -13,7 +13,7 @@ function SupportHero() {
                 <img src={ContactUs} alt="" className="w-5/6 mx-auto"/>
             </Animated>
             <Animated animationIn="slideInUp" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
-                <div className="container px-8 py-8 bg-gray-200 font-serif">
+                <div className="px-8 py-8 bg-gray-100 font-serif">
                     <SupportMessage message="If you have any Question Papers or Notes that we don't have, then do share it. Your single contribution will be very helpful for us and for our juniors." />
                     <SupportMessage message="Feel free to give feedback and to tell the areas of the website to improve." />
                     <span className="text-lg"> 

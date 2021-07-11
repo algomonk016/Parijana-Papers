@@ -47,7 +47,11 @@ const SupportModal =()=> {
         setIsOpen(false);
     }
 
-    let demo = <Animated animationIn="fadeIn" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}> <div className="container"> <img className="w-full" src={supportHands} alt="" srcset=""/> </div> </Animated>
+    let demo =  <Animated animationIn="fadeIn" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}> 
+                    <div className="container"> 
+                        <img className="w-full" src={supportHands} alt="" srcset=""/> 
+                    </div> 
+                </Animated>
 
     return (
         <Animated animationIn="fadeIn" animationOut="slideOutUp" animationInDuration={1000} isVisible={true}>
@@ -64,7 +68,7 @@ const SupportModal =()=> {
                         <button onClick={closeModal} className={closeStyle}> &#10005; </button>
                     </div>
                     {demo}
-                    <div className="bg-indigo-200 text-blue-700 p-4 bottom-0 left-0 w-80">
+                    <div className="bg-blue-200 text-blue-700 p-4 bottom-0 left-0">
                         <Animated animationIn="fadeInDown" animationOut="slideOutUp" animationInDuration={700} animationInDelay={100} isVisible={true}>
                             <ModalMessage msg="Currently, this form supports sending a single attachment at a time" />
                             <ModalMessage msg="If you've multiple files, then it is preferred to merge them into a single pdf and then send it, or you can also mail it to " /> 
